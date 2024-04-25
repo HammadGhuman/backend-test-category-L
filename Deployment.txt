@@ -1,0 +1,24 @@
+in order to deploy the application 
+
+First we should optimize the application by 
+
+1. optimizing the code 
+2. implement caching
+3. implement logging
+etc 
+
+for the high scalability of the app we can use docker and 
+kubernetes by setting up scaling polices to adjust the 
+number of instance based on load
+
+set of configService and env to easily setup the environment
+variables make sure to store the sensitive information in the 
+env files 
+
+implement a testing service 
+
+implement a robust CI CD pipeline
+
+we can use any cloud service providers to deploy the application
+
+we can also use nginx for load balancing
