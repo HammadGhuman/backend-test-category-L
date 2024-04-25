@@ -1,0 +1,59 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Job {
+  status: String!
+  job_name: String!
+  user: User!
+}
+
+type User {
+  id: Int!
+  username: String!
+  email: String!
+  password: String!
+  jobs: [Job!]!
+}
+
+type LoginResponse {
+  access_token: String!
+  user: User!
+}
+
+type Query {
+  users: [User!]!
+  user(id: Int!): User!
+  jobs: [Job!]!
+  job(id: Int!): Job!
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): User!
+  updateUser(updateUserInput: UpdateUserInput!, id: Int!): User!
+  removeUser(id: Int!): User!
+  login(loginUserInput: LoginUserInput!): LoginResponse!
+  createJob(createJobInput: CreateJobInput!): Job!
+}
+
+input CreateUserInput {
+  username: String!
+  email: String!
+  password: String!
+}
+
+input UpdateUserInput {
+  username: String
+  email: String
+  password: String
+  id: Int!
+}
+
+input LoginUserInput {
+  username: String!
+  password: String!
+}
+
+input CreateJobInput {
+  job_name: String!
+}
